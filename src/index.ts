@@ -90,8 +90,8 @@ When enabled, the compiler will check all code paths in a function to ensure the
 //     if (age>10){
 //         return age
 //     }
-//     //return undefined is implicit here
-//     return
+//     // return undefined is implicit
+//     return undefined // Be explicit with the return
 // }    
 
 /*
@@ -102,6 +102,7 @@ When enabled, the compiler will report unused local variables.
 */
 // function doSomething(){
 //     let unused = 'Brian';
+//     console.log(unused)
 //     return 10 + 25;
 // }
 
@@ -116,6 +117,7 @@ When enabled, the compiler will report unused parameters.
 //     console.log(param2);
 //     console.log(param1);
 // }
+
 /*
 Sometime you want to ignore the parameter without turning off this compiler option
 the _ represents a placeholder for an unused parameter, this is a convention that is built
@@ -125,13 +127,13 @@ in to TypeScript
 //     console.log(param2)
 // }
 
-// let colors: string[] = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+let colors: string[] = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 
-// function getEvenIndices(_:string, index:number){
-//     return index % 2 === 0
-// }
+function getEvenIndices(_:string, index:number){
+    return index % 2 === 0
+}
 
-// colors.filter(getEvenIndices);
+colors.filter(getEvenIndices);
 
 
 /*
@@ -157,7 +159,7 @@ Recommended: false
 When set the false, reports error about unreachable code. 
 */
 
-// function sipylus(fruits:string[]){
+// function lowerFruit(fruits:string[]){
 //     for(let fruit of fruits){
 //         fruit=fruit.toLowerCase()
 //         break
@@ -218,7 +220,7 @@ When enabled TS will try to type check our JS code
 /*
 Note No Error Without checkJS
 with checkJS compile time error
-can Avoid this error by adding //ts-nocheck to the top of our file
+can Avoid this error by adding //@ts-nocheck to the top of our file
 
 Js implicitly passes undefined when parameters are not defined.  
 To TS our JS parameters are of any type, so this passes the type check
@@ -231,9 +233,9 @@ To TS our JS parameters are of any type, so this passes the type check
 */
 
 
-// import {squareFootageJD} from './area-js-doc';
-// // squareFootageJD();
-// squareFootageJD(2,3);
+// import {squareFootage2} from './area-js-doc';
+// // squareFootage2();
+// squareFootage2(2,3);
 
 
 /*
@@ -269,7 +271,7 @@ This package generates universally unique identifiers
 // npm install @types/uuid
 // Now the error has gone away
 
-// import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 
-// let uuid= uuidv4()
-// console.log(uuid);
+let uuid = uuidv4()
+console.log(uuid);
