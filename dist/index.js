@@ -11,9 +11,5 @@ let student1 = {
     lastName: 'Stanton'
 };
 console.log(student1.lastName);
-
-
-student1.firstName = 10
-
-
-student1.firstName.toUpperCase()
+student1.firstName = '10';
+student1.firstName.toUpperCase();
